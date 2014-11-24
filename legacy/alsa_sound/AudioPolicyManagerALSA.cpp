@@ -313,11 +313,11 @@ status_t AudioPolicyManager::setDeviceConnectionState(audio_devices_t device,
                 } else if (audio_is_bluetooth_sco_device(device)) {
                     // handle SCO device connection
                     mScoDeviceAddress = String8(device_address, MAX_DEVICE_ADDRESS_LEN);
-                } else if (audio_is_usb_device(device)) {
+                } //else if (audio_is_usb_device(device)) {
                     // handle USB device connection
-                    mUsbCardAndDevice = String8(device_address, MAX_DEVICE_ADDRESS_LEN);
-                    paramStr = mUsbCardAndDevice;
-                }
+                    //mUsbCardAndDevice = String8(device_address, MAX_DEVICE_ADDRESS_LEN);
+                    //paramStr = mUsbCardAndDevice;
+                //}
                 // not currently handling multiple simultaneous submixes: ignoring remote submix
                 //   case and address
                 if (!paramStr.isEmpty()) {
@@ -353,7 +353,7 @@ status_t AudioPolicyManager::setDeviceConnectionState(audio_devices_t device,
                 mScoDeviceAddress = "";
             } else if (audio_is_usb_device(device)) {
                 // handle USB device disconnection
-                mUsbCardAndDevice = "";
+                //mUsbCardAndDevice = "";
 
                 AudioParameter param;
                 param.add(String8("usb_connected"), String8("false"));
@@ -533,7 +533,7 @@ AudioSystem::device_connection_state AudioPolicyManager::getDeviceConnectionStat
                 return state;
             }
             if (audio_is_usb_device(device) &&
-                ((address != "" && mUsbCardAndDevice != address))) {
+                ((address != ""))){// && mUsbCardAndDevice != address))) {
                 ALOGE("getDeviceConnectionState() invalid device: %x", device);
                 return state;
             }
