@@ -2824,7 +2824,7 @@ status_t AudioHardwareALSA::openA2dpOutput()
     }
     //TODO: unique id 0?
     status = mA2dpDevice->open_output_stream(mA2dpDevice, 0,((audio_devices_t)(AudioSystem::DEVICE_OUT_BLUETOOTH_A2DP)),
-                                    (audio_output_flags_t)AUDIO_OUTPUT_FLAG_NONE, &config, &mA2dpStream);
+                                    (audio_output_flags_t)AUDIO_OUTPUT_FLAG_NONE, &config, &mA2dpStream, NULL);
     if(status != NO_ERROR) {
         ALOGE("Failed to open output stream for a2dp: status %d", status);
     }
