@@ -2874,7 +2874,7 @@ status_t AudioHardwareALSA::openUsbOutput()
     }
 
     status = mUsbDevice->open_output_stream(mUsbDevice, 0,((audio_devices_t)(AUDIO_DEVICE_OUT_USB_ACCESSORY)),
-                                    (audio_output_flags_t)AUDIO_OUTPUT_FLAG_NONE, &config, &mUsbStream);
+                                    (audio_output_flags_t)AUDIO_OUTPUT_FLAG_NONE, &config, &mUsbStream, NULL);
     if(status != NO_ERROR) {
         ALOGE("Failed to open output stream for USB: status %d", status);
     }
