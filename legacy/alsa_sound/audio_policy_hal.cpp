@@ -148,7 +148,7 @@ static audio_io_handle_t ap_get_output(struct audio_policy *pol,
     ALOGV("%s: tid %d", __func__, gettid());
     return qap->apm->getOutput((AudioSystem::stream_type)stream,
                                sampling_rate, format, channels,
-                               (AudioSystem::output_flags)flags);
+                               (AudioSystem::output_flags)flags, offloadInfo);
 }
 
 static int ap_start_output(struct audio_policy *pol, audio_io_handle_t output,
