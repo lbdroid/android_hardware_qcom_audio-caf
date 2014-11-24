@@ -932,10 +932,10 @@ String8 AudioHardwareALSA::getParameters(const String8& keys)
         param.addInt(key, mCurDevice);
     }
 
-    key = String8(AudioParameter::keyCanOpenProxy);
-    if(param.get(key, value) == NO_ERROR) {
-        param.addInt(key, mCanOpenProxy);
-    }
+    //key = String8(AudioParameter::keyCanOpenProxy);
+    //if(param.get(key, value) == NO_ERROR) {
+    //    param.addInt(key, mCanOpenProxy);
+    //}
 
     key = String8(ECHO_SUPRESSION);
     if (param.get(key, value) == NO_ERROR) {
