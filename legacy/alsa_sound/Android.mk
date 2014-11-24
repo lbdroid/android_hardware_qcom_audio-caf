@@ -11,9 +11,6 @@ common_cflags := -D_POSIX_SOURCE
 ifneq ($(strip $(QCOM_ACDB_ENABLED)),false)
     common_cflags += -DQCOM_ACDB_ENABLED
 endif
-ifneq ($(strip $(QCOM_ANC_HEADSET_ENABLED)),false)
-    common_cflags += -DQCOM_ANC_HEADSET_ENABLED
-endif
 ifeq ($(strip $(QCOM_MULTI_VOICE_SESSION_ENABLED)),true)
     LOCAL_CFLAGS += -DQCOM_MULTI_VOICE_SESSION_ENABLED
 endif
