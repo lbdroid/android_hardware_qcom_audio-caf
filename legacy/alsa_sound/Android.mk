@@ -32,9 +32,6 @@ endif
 ifeq ($(strip $(QCOM_SSR_ENABLED)),true)
     common_cflags += -DQCOM_SSR_ENABLED
 endif
-ifneq ($(strip $(QCOM_ADSP_SSR_ENABLED)),false)
-    common_cflags += -DQCOM_ADSP_SSR_ENABLED
-endif
 ifneq ($(strip $(QCOM_TUNNEL_LPA_ENABLED)),false)
     common_cflags += -DQCOM_TUNNEL_LPA_ENABLED
 endif
